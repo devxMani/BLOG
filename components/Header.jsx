@@ -1,5 +1,4 @@
 import { assets } from "@/Assets/assets";
-import React from "react";
 import Image from "next/image";
 
 export default function Header() {
@@ -10,8 +9,7 @@ export default function Header() {
           src={assets.logo}
           width={180}
           alt=""
-          className="w-[130px] sm:w-auto"
-        />
+          className="w-[130px] sm:w-auto"/>
       </div>
     </div>
   );
