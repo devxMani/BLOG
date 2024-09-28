@@ -12,9 +12,7 @@ export default function Header() {
           className="w-[130px] sm:w-auto"
         />
         <button className="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#000000]">
-          Get started <Image src={assets.arrow} alt="" className="w-4" />
-          {}
-        </button>
+          Get started <Image src={assets.arrow} alt=""/></button>
       </div>
 
       <div className="text-center my-8">
@@ -26,10 +24,9 @@ export default function Header() {
         </p>
         <form className="flex justify-between max-w-[500px] scale-75 sm:scale-100 mx-auto mt-10 border border-black shadow-[-7px_7px_0px_#000000]" action="">
           <input
-            type="text"
+            type="email"
             placeholder="Enter your email"
-            className="w-full py-2 px-4 outline-none"
-          />
+            className="pl-4 outline-none"/>
           <button type="submit" className="border-l border-black py-4 px-4 sm:px-8 active:bg-gray-600 active:text-white">
             Subscribe
           </button>
