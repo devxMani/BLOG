@@ -1,5 +1,6 @@
 const { NextResponse } = require("next/server");
 import { ConnectDB } from "@lib/config/db";
+import { log } from "console";
 import { writeFile } from "fs/promises";
 
 const LoadDB = async () => {
@@ -25,14 +26,16 @@ export async function POST(request) {
   const imgUrl = "/${timeStamp}_${image.name}";
 
   const blogData = {
-    title: '${formData.get("title")}',
-    description: '${formData.get("description")}',
-    category: '${formData.get("category")}',
-    author: '${formData.get("author")}',
-    image: "${imgUrl}",
-    authorImg: "${formData.get("authorImg")}"
-
+    title: `${formData.get("title")}`,
+    description: `${formData.get("description")}`,
+    category: `${formData.get("category")}`,
+    author: `${formData.get("author")}`,
+    image: `${imgUrl}`,
+    authorImg: `${formData.get("authorImg")}`
   };
+await BlogModel.create(blogData);
+console.log("Blog saved");
 
-  return NextResponse.json({ imgUrl });
+return NextResponse.json({ success: true,msg: "Blog saved" });
+
 }
